@@ -27,6 +27,7 @@ class Login extends StatelessWidget {
               ),
             ),
             Container(
+              margin: EdgeInsets.only(bottom: 20),
                 child: Text(
               'Finance and banking app please login to ypur \n'
               '      account for your check and balance',
@@ -34,48 +35,82 @@ class Login extends StatelessWidget {
                 color: Colors.white,
               ),
             )),
-            Container(
-              child: Card(
-                margin: EdgeInsets.only(top: 50, left: 35, right: 35),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                color: Colors.deepPurple,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.fromLTRB(190, 10, 10, 10),
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  // builder: (context) => Balance(),
-                                  builder: (context) {
-                                    return Balances();
-                                  },
-                                ),
-                              );
-                            },
-                            child: Text(
-                              'Login',
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Balances()
+                      ),
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 55,
+                        width: 320,
+                        decoration: BoxDecoration(
+                            color: Colors.deepPurple,
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Center(
+                          child: Text('Login',
                               style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white)),
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
+
+            // Container(
+            //   child: Card(
+            //     margin: EdgeInsets.only(top: 50, left: 35, right: 35),
+            //     shape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.circular(15),
+            //     ),
+            //     color: Colors.deepPurple,
+            //     child: Row(
+            //       crossAxisAlignment: CrossAxisAlignment.start,
+            //       children: [
+            //         Column(
+            //           mainAxisAlignment: MainAxisAlignment.center,
+            //           crossAxisAlignment: CrossAxisAlignment.center,
+            //           children: [
+            //             InkWell(
+            //               onTap:() {
+            //                 Navigator.of(context).push(
+            //                   MaterialPageRoute(
+            //                     // builder: (context) => Balance(),
+            //                     builder: (context) {
+            //                       return Balances();
+            //                     },
+            //                   ),
+            //                 );
+            //               },
+            //               child: Container(
+            //                 margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            //                 child: Text(
+            //                   'Login',
+            //                   style: TextStyle(
+            //                     fontSize: 20,
+            //                     color: Colors.white,
+            //                   ),
+            //                 ),
+            //               ),
+            //             ),
+            //           ],
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
             Container(
               margin: EdgeInsets.only(top: 20),
               child: Text(

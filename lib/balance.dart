@@ -112,88 +112,279 @@ class _BalanceStates extends State<Balances> {
                     ),
                   ]),
                 ),
-                Center(
-                  child: Container(
-                    child: Padding(
-                      padding:
-                          const EdgeInsets.only(left: 15, top: 5, right: 15),
-                      child: Row(children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.2),
-                          ),
-                          color: Colors.deepPurple,
+                Card(
+                  margin: EdgeInsets.only(left: 20, right: 20,bottom: 20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.2),
+                  ),
+                  color: Colors.white24,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          margin: EdgeInsets.all(20),
+
                           child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    margin:
-                                        EdgeInsets.fromLTRB(120, 60, 120, 60),
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(top: 5),
-                                      child: Text(
-                                        '27,802.05',
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
+                                  Text(
+                                    "June 14, 2020",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                        ),
                                   ),
+                                  Text(
+                                    "\$27,802.05",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 25,
+                                        fontWeight: FontWeight.bold
+                                    ),
+                                  )
                                 ],
+                              ),
+
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          padding: EdgeInsets.all(20),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                "15%",
+                                style:
+                                TextStyle(color: Colors.white, fontSize: 20),
+                              ),
+                              Icon(Icons.arrow_upward,
+                              color: Colors.white,
                               ),
                             ],
                           ),
                         ),
-                      ]),
+                      )
+                    ],
+                  ),
+                ),
+
+
+                // Column(
+                //   crossAxisAlignment: CrossAxisAlignment.center,
+                //   children: [
+                //     Padding(
+                //       padding: const EdgeInsets.only(left: 15, top: 5, right: 15),
+                //       child: Row(children: [
+                //         Card(
+                //           shape: RoundedRectangleBorder(
+                //             borderRadius: BorderRadius.circular(16.2),
+                //           ),
+                //           color: Colors.white24,
+                //           child: Row(
+                //             crossAxisAlignment: CrossAxisAlignment.start,
+                //             children: [
+                //               Column(
+                //                 crossAxisAlignment: CrossAxisAlignment.center,
+                //                 children: [
+                //                   Container(
+                //                     margin: EdgeInsets.fromLTRB(120, 60, 120, 60),
+                //                     child: Padding(
+                //                       padding: const EdgeInsets.only(top: 5),
+                //                       child: Text(
+                //                         '27,802.05',
+                //                         style: TextStyle(
+                //                             fontSize: 22,
+                //                             color: Colors.white,
+                //                             fontWeight: FontWeight.bold),
+                //                       ),
+                //                     ),
+                //                   ),
+                //                 ],
+                //               ),
+                //             ],
+                //           ),
+                //         ),
+                //       ]),
+                //     ),
+                //   ],
+                // ),
+
+
+
+                SingleChildScrollView(
+                  // scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(18, 5, 18, 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding:
+                          const EdgeInsets.only( top: 5),
+                          child: Column(
+                            children: [
+                              Container(
+                                  height: 55,
+                                  width: 55,
+                                  child: Icon(
+                                    Icons.arrow_upward,
+                                    color: Colors.pink,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    color:Colors.white24,
+                                  )),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Container(
+                                    child: Text(
+                                      "Sent",
+                                      style: TextStyle(color: Colors.white),
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                          const EdgeInsets.only(left: 20, top: 5),
+                          child: Column(
+                            children: [
+                              Container(
+                                  height: 55,
+                                  width: 55,
+                                  child: Icon(
+                                    Icons.arrow_downward,
+                                    color: Colors.green,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    color:Colors.white24,                                  )),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Container(
+                                    child: Text(
+                                      "Receive",
+                                      style: TextStyle(color: Colors.white),
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                          const EdgeInsets.only(left: 20, top: 5),
+                          child: Column(
+                            children: [
+                              Container(
+                                  height: 55,
+                                  width: 55,
+                                  child: Icon(
+                                    Icons.currency_rupee,
+                                    color: Colors.orange,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    color:Colors.white24,                                  )),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Container(
+                                    child: Text(
+                                      "Loan",
+                                      style: TextStyle(color: Colors.white),
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                          const EdgeInsets.only(left: 20, top: 5),
+                          child: Column(
+                            children: [
+                              Container(
+                                  height: 55,
+                                  width: 55,
+                                  child: Icon(
+                                    Icons.cloud_upload_outlined,
+                                    color: Colors.blue,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    color:Colors.white24,                                  )),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Container(
+                                    child: Text(
+                                      "Topup",
+                                      style: TextStyle(color: Colors.white),
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                    Center(child: Image(image: AssetImage('assets/images/graph.jpg',),height: 250,))
+                  ],),
+                )
+
               ],
             ),
           ),
-          bottomNavigationBar: Container(
-            child: BottomNavigationBar(
-              onTap: (index) {
-                currentIndex = index;
-                if (currentIndex == 1) {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) {
+          bottomNavigationBar: BottomNavigationBar(
+            onTap: (index) {
+              currentIndex = index;
+              if (currentIndex == 1) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) {
+                    return Cards();
+                  }),
+                );
+              } else if (currentIndex == 2) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
                       return Cards();
-                    }),
-                  );
-                } else if (currentIndex == 2) {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return Cards();
-                      },
-                    ),
-                  );
-                } else
-                  setState(() {
-                    currentIndex = index;
-                  });
-              },
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.account_balance),
-                  label: 'Account',
+                    },
+                  ),
+                );
+              } else
+                setState(() {
+                  currentIndex = index;
+                });
+            },
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.account_balance,
                 ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.credit_card),
-                  label: 'Cards',
+                label: 'Account',
+
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.credit_card,
                 ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.currency_rupee),
-                  label: 'Loans',
+                label: 'Cards',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.currency_rupee,
                 ),
-              ],
-            ),
+                label: 'Loans',
+              ),
+            ],
           ),
         ),
       ),

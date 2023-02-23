@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:uiscreen/yourbalance.dart';
-import 'package:uiscreen/yourcards.dart';
-
-import 'balance.dart';
-import 'banklogin.dart';
 import 'login.dart';
 
 void main() {

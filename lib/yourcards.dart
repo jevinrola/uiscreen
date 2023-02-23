@@ -1,13 +1,34 @@
 import 'package:flutter/material.dart';
 
-class Cards extends StatelessWidget {
+import 'balance.dart';
+
+class Cards extends StatefulWidget {
   const Cards({Key? key}) : super(key: key);
+
+  @override
+  State<Cards> createState() => _CardsStates();
+}
+
+class _CardsStates extends State<Cards> {
+  var currentIndex = 1;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: SafeArea(
         child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.black,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+              ),
+            ),
+          ),
           backgroundColor: Colors.black,
           body: Column(children: [
             Row(
@@ -49,7 +70,7 @@ class Cards extends StatelessWidget {
                 children: [Image(image: AssetImage('images/card.jpeg'))],
               ),
             ),
-            Expanded(flex: 2,
+            Expanded(
               child: Column(
                 children: [
                   Card(
@@ -57,7 +78,7 @@ class Cards extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.2),
                     ),
-                    color: Colors.deepPurple,
+                    color: Colors.white24,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,8 +131,8 @@ class Cards extends StatelessWidget {
                               children: [
                                 Text(
                                   "+\$2020",
-                                  style:
-                                      TextStyle(color: Colors.white, fontSize: 20),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
                                 )
                               ],
                             ),
@@ -121,13 +142,13 @@ class Cards extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 20,bottom: 20),
+                    margin: EdgeInsets.only(top: 15, bottom: 15),
                     child: Card(
                       margin: EdgeInsets.only(left: 20, right: 20),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.2),
                       ),
-                      color: Colors.deepPurple,
+                      color: Colors.white24,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -152,7 +173,8 @@ class Cards extends StatelessWidget {
                               child: Row(
                                 children: [
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "KFC",
@@ -180,8 +202,8 @@ class Cards extends StatelessWidget {
                                 children: [
                                   Text(
                                     "+\$2020",
-                                    style:
-                                    TextStyle(color: Colors.white, fontSize: 20),
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 20),
                                   )
                                 ],
                               ),
@@ -196,7 +218,7 @@ class Cards extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.2),
                     ),
-                    color: Colors.deepPurple,
+                    color: Colors.white24,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -249,8 +271,8 @@ class Cards extends StatelessWidget {
                               children: [
                                 Text(
                                   "+\$2020",
-                                  style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
                                 )
                               ],
                             ),
@@ -263,6 +285,43 @@ class Cards extends StatelessWidget {
               ),
             )
           ]),
+          bottomNavigationBar: BottomNavigationBar(
+            onTap: (index) {
+              currentIndex = index;
+              if (currentIndex == 0) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) {
+                    return Balances();
+                  }),
+                );
+              } else if (currentIndex == 2) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return Cards();
+                    },
+                  ),
+                );
+              } else
+                setState(() {
+                  currentIndex = index;
+                });
+            },
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.account_balance),
+                label: 'Account',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.credit_card),
+                label: 'Cards',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.currency_rupee),
+                label: 'Loans',
+              ),
+            ],
+          ),
         ),
       ),
     );
