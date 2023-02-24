@@ -124,7 +124,8 @@ class _BalanceStates extends State<Balances> {
                     children: [
                       Expanded(
                         child: Container(
-                          margin: EdgeInsets.all(20),
+                          height: 80,
+                          margin: EdgeInsets.only(top: 50,left: 20,),
 
                           child: Row(
                             children: [
@@ -154,7 +155,7 @@ class _BalanceStates extends State<Balances> {
                       ),
                       Expanded(
                         child: Container(
-                          padding: EdgeInsets.all(20),
+                          padding: EdgeInsets.only(top: 60),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
@@ -173,48 +174,6 @@ class _BalanceStates extends State<Balances> {
                     ],
                   ),
                 ),
-
-
-                // Column(
-                //   crossAxisAlignment: CrossAxisAlignment.center,
-                //   children: [
-                //     Padding(
-                //       padding: const EdgeInsets.only(left: 15, top: 5, right: 15),
-                //       child: Row(children: [
-                //         Card(
-                //           shape: RoundedRectangleBorder(
-                //             borderRadius: BorderRadius.circular(16.2),
-                //           ),
-                //           color: Colors.white24,
-                //           child: Row(
-                //             crossAxisAlignment: CrossAxisAlignment.start,
-                //             children: [
-                //               Column(
-                //                 crossAxisAlignment: CrossAxisAlignment.center,
-                //                 children: [
-                //                   Container(
-                //                     margin: EdgeInsets.fromLTRB(120, 60, 120, 60),
-                //                     child: Padding(
-                //                       padding: const EdgeInsets.only(top: 5),
-                //                       child: Text(
-                //                         '27,802.05',
-                //                         style: TextStyle(
-                //                             fontSize: 22,
-                //                             color: Colors.white,
-                //                             fontWeight: FontWeight.bold),
-                //                       ),
-                //                     ),
-                //                   ),
-                //                 ],
-                //               ),
-                //             ],
-                //           ),
-                //         ),
-                //       ]),
-                //     ),
-                //   ],
-                // ),
-
 
 
                 SingleChildScrollView(
