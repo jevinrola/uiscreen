@@ -69,48 +69,6 @@ class Login extends StatelessWidget {
               ],
             ),
 
-            // Container(
-            //   child: Card(
-            //     margin: EdgeInsets.only(top: 50, left: 35, right: 35),
-            //     shape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.circular(15),
-            //     ),
-            //     color: Colors.deepPurple,
-            //     child: Row(
-            //       crossAxisAlignment: CrossAxisAlignment.start,
-            //       children: [
-            //         Column(
-            //           mainAxisAlignment: MainAxisAlignment.center,
-            //           crossAxisAlignment: CrossAxisAlignment.center,
-            //           children: [
-            //             InkWell(
-            //               onTap:() {
-            //                 Navigator.of(context).push(
-            //                   MaterialPageRoute(
-            //                     // builder: (context) => Balance(),
-            //                     builder: (context) {
-            //                       return Balances();
-            //                     },
-            //                   ),
-            //                 );
-            //               },
-            //               child: Container(
-            //                 margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-            //                 child: Text(
-            //                   'Login',
-            //                   style: TextStyle(
-            //                     fontSize: 20,
-            //                     color: Colors.white,
-            //                   ),
-            //                 ),
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
             Container(
               margin: EdgeInsets.only(top: 20),
               child: Text(

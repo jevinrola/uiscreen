@@ -83,6 +83,9 @@ class _BalanceStates extends State<Balances> {
               ],
             ),
           ),
+
+
+
           body: Container(
             color: Colors.black,
             child: Column(
@@ -304,6 +307,7 @@ class _BalanceStates extends State<Balances> {
               ],
             ),
           ),
+
           bottomNavigationBar: BottomNavigationBar(
             onTap: (index) {
               currentIndex = index;

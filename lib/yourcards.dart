@@ -30,261 +30,80 @@ class _CardsStates extends State<Cards> {
             ),
           ),
           backgroundColor: Colors.black,
-          body: Column(children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Your Card",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5),
-                        child: Text("Your have 3 Active Cards",
-                            style: TextStyle(color: Colors.grey, fontSize: 15)),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 20),
-                  child: Container(
-                    child: Icon(Icons.add, size: 40),
-                    decoration: BoxDecoration(
-                        color: Colors.yellow,
-                        borderRadius: BorderRadius.circular(50)),
-                  ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: Column(
-                children: [Image(image: AssetImage('images/card.jpeg'))],
-              ),
-            ),
-            Expanded(
-              child: Column(
-                children: [
-                  Card(
-                    margin: EdgeInsets.only(left: 20, right: 20),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.2),
-                    ),
-                    color: Colors.white24,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: Row(
-                            children: [
-                              Container(
-                                child: Icon(
-                                  Icons.fastfood_outlined,
-                                  size: 40,
-                                  color: Colors.white,
-                                ),
-                                padding: EdgeInsets.all(15),
-                              )
-                            ],
+
+          body: Column(
+            children: [
+              Expanded(
+                child: Column(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(top: 0),
+                      child: Expanded(
+                        child: ListTile(
+                          title: Text(
+                            "Your Cards",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          subtitle: Text(
+                            "You have 3 Active Cards",
+                            style: TextStyle(color: Colors.white70),
                           ),
                         ),
-                        Expanded(
-                          child: Container(
-                            padding: EdgeInsets.only(top: 12, left: 0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "KFC",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 25,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Text(
-                                      "june 26",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            padding: EdgeInsets.all(20),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text(
-                                  "+\$2020",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 20),
-                                )
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 15, bottom: 15),
-                    child: Card(
-                      margin: EdgeInsets.only(left: 20, right: 20),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16.2),
                       ),
-                      color: Colors.white24,
+                    ),
+                    creditCard(),
+                    Container(
+                      color: Colors.black,
+                      padding: EdgeInsets.only(
+                        left: 40,
+                      ),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Row(
-                              children: [
-                                Container(
-                                  child: Icon(
-                                    Icons.fastfood_outlined,
-                                    size: 40,
-                                    color: Colors.white,
-                                  ),
-                                  padding: EdgeInsets.all(15),
-                                )
-                              ],
-                            ),
+                        children: const [
+                          Text(
+                            "Recent Transactions",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold),
                           ),
-                          Expanded(
-                            child: Container(
-                              padding: EdgeInsets.only(top: 12, left: 0),
-                              child: Row(
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "KFC",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        "june 26",
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 15),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Container(
-                              padding: EdgeInsets.all(20),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    "+\$2020",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 20),
-                                  )
-                                ],
-                              ),
-                            ),
-                          )
                         ],
                       ),
                     ),
-                  ),
-                  Card(
-                    margin: EdgeInsets.only(left: 20, right: 20),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.2),
-                    ),
-                    color: Colors.white24,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  child: SingleChildScrollView(
+                    child: Column(
                       children: [
-                        Expanded(
-                          child: Row(
-                            children: [
-                              Container(
-                                child: Icon(
-                                  Icons.fastfood_outlined,
-                                  size: 40,
-                                  color: Colors.white,
-                                ),
-                                padding: EdgeInsets.all(15),
-                              )
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            padding: EdgeInsets.only(top: 12, left: 0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "KFC",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 25,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Text(
-                                      "june 26",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            padding: EdgeInsets.all(20),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text(
-                                  "+\$2020",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 20),
-                                )
-                              ],
-                            ),
-                          ),
-                        )
+                        customTransaction(
+                            icon: "assets/images/Burger.png",
+                            title: "KFC",
+                            subtitle: "June 26",
+                            amount: "+\$2,010"),
+                        customTransaction(
+                            icon: "assets/images/paypal.png",
+                            title: "Paypal",
+                            subtitle: "June 28",
+                            amount: "+\$12,010"),
+                        customTransaction(
+                            icon: "assets/images/Burger.png",
+                            title: "Car Repair",
+                            subtitle: "Aug 12",
+                            amount: "+\$232,010"),
                       ],
                     ),
                   ),
-                ],
+                ),
               ),
-            )
-          ]),
+            ],
+          ),
+
+
           bottomNavigationBar: BottomNavigationBar(
             onTap: (index) {
               currentIndex = index;
@@ -321,6 +140,188 @@ class _CardsStates extends State<Cards> {
                 label: 'Loans',
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget customTransaction({icon, title, subtitle, amount}) {
+    return Row(
+      children: [
+        Expanded(
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+            margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+            color: Colors.grey.shade800,
+            child: Row(
+              children: [
+                Container(
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                  margin: EdgeInsets.all(15),
+                  child: Image.asset(
+                    icon,
+                    scale: 2,
+                    height: 55,
+                    color: Colors.white,
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          title,
+                          style: const TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Text(
+                          subtitle,
+                          style: const TextStyle(
+                              color: Colors.white54, fontSize: 11),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    amount,
+                    style: const TextStyle(color: Colors.white, fontSize: 13),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget creditCard() {
+    return Expanded(child: Container(
+        margin: EdgeInsets.all(8),
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          color: Colors.deepPurple,
+          margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Expanded(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          padding: EdgeInsets.only(left: 20),
+                          alignment: Alignment.centerLeft,
+                          child: Image.asset(
+                            "assets/images/chip.png",
+                            height:70,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                          alignment: Alignment.centerLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text(
+                                "4562 1122 4595 7852",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 7,
+                              ),
+                              Text(
+                                "Ghulam",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                          alignment: Alignment.centerLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text(
+                                "Expiry Date",
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 7,
+                              ),
+                              Text(
+                                "24/2024",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 70,
+                          padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
+                          alignment: Alignment.centerRight,
+                          child: Column(
+                            children: const [
+                              Expanded(
+                                child: Image(
+                                  image: AssetImage(
+                                    'assets/images/logo.png',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
