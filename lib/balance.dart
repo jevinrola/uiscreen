@@ -316,7 +316,7 @@ class _BalanceStates extends State<Balances> {
                           alignment: Alignment.center,
                           margin: const EdgeInsets.all(5),
                           padding: const EdgeInsets.all(10),
-                          child: const Text("Feb",  style: TextStyle(color: Colors.white54, fontSize: 10),),
+                          child: const Text("Feb", style: TextStyle(color: Colors.white, fontSize: 16),),
                         ),
                       ),
                       Expanded(
@@ -329,7 +329,7 @@ class _BalanceStates extends State<Balances> {
                           alignment: Alignment.center,
                           margin: const EdgeInsets.all(5),
                           padding: const EdgeInsets.all(10),
-                          child: const Text("Mar", textAlign: TextAlign.center, style: TextStyle(color: Colors.white54, fontSize: 10),),
+                          child: const Text("Mar", style: TextStyle(color: Colors.white, fontSize: 16),),
                         ),
                       ),
                       Expanded(
@@ -342,7 +342,7 @@ class _BalanceStates extends State<Balances> {
                           alignment: Alignment.center,
                           margin: const EdgeInsets.all(5),
                           padding: const EdgeInsets.all(6),
-                          child: const Text("Apr", textAlign: TextAlign.center, style: TextStyle(color: Colors.white54, fontSize: 10),),
+                          child: const Text("Apr", style: TextStyle(color: Colors.white, fontSize: 16),),
                         ),
                       ),
                       Expanded(
@@ -512,13 +512,7 @@ class _BalanceStates extends State<Balances> {
                             },
                           ),
                           const SizedBox(width: 8),
-                          // TextButton(
-                          //   child: const Text('LISTEN'),
-                          //   onPressed: () {
-                          //     /* ... */
-                          //   },
-                          // ),
-                          // const SizedBox(width: 8),
+
                         ],
                       )
                     ],

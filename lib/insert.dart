@@ -1,9 +1,8 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import 'details.dart';
+// ignore: must_be_immutable
 class Insert extends StatefulWidget {
   Insert(this.map, {super.key});
   Map? map;

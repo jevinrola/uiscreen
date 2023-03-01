@@ -24,21 +24,21 @@ class _StuState extends State<Stu> {
         backgroundColor: Colors.black,
         leading: IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Balances(),));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const Balances(),));
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios_new,
               size: 25,
               color: Colors.white,
             )),
-        title: Text(
+        title: const Text(
           'Student Loans',
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
         actions: [Padding(
           padding: const EdgeInsets.all(8.0),
-          child: InkWell(child: Icon(Icons.add,color: Colors.white,size: 25,),
+          child: InkWell(child: const Icon(Icons.add,color: Colors.white,size: 25,),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) {
@@ -76,24 +76,24 @@ class _StuState extends State<Stu> {
                             });
                           },
                           child: Container(
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             child: Card(
 
                               color: Colors.deepPurple,
-                              margin: EdgeInsets.only(
+                              margin: const EdgeInsets.only(
                                   top: 10, bottom: 5, right: 10, left: 10),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25)),
                               child: Container(
-                                padding: EdgeInsets.only(top: 30,bottom: 30,left: 10,right: 10),
+                                padding: const EdgeInsets.only(top: 30,bottom: 30,left: 10,right: 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Column(children: [
+                                    Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
                                       Container(
-                                        margin: EdgeInsets.only(bottom: 10),
+                                        margin: const EdgeInsets.only(bottom: 10),
                                         child: ClipRRect(
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                               topLeft: Radius.circular(20),
                                               topRight: Radius.circular(20)),
                                           child: Image.network(
@@ -103,15 +103,15 @@ class _StuState extends State<Stu> {
                                           ),
                                         ),
                                       ),
-                                    ], crossAxisAlignment: CrossAxisAlignment.stretch),
+                                    ]),
                                     Container(
-                                      margin: EdgeInsets.only(bottom: 15),
+                                      margin: const EdgeInsets.only(bottom: 15),
                                       child: Row(
                                         children: [
                                           Expanded(
                                             flex: 3,
                                             child: Container(
-                                              margin: EdgeInsets.only(left: 15),
+                                              margin: const EdgeInsets.only(left: 15),
                                               child: Column(
                                                 crossAxisAlignment:
                                                 CrossAxisAlignment.start,
@@ -119,30 +119,30 @@ class _StuState extends State<Stu> {
                                                   Text(
                                                       snapshot.data![index]['name']
                                                           .toString(),
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                           fontSize: 22,
                                                           fontWeight: FontWeight.bold,
                                                       color: Colors.white)),
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     height: 10,
                                                   ),
                                                   Row(
                                                     children: [
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.location_on_outlined,
                                                         size: 30,color: Colors.white,
                                                       ),
                                                       Text(snapshot.data![index]
-                                                      ['address'],style: TextStyle(fontSize: 18,
+                                                      ['address'],style: const TextStyle(fontSize: 18,
                                                       color: Colors.white)),
                                                     ],
                                                   ),
                                                   Container(
-                                                    padding: EdgeInsets.only(left: 10,top: 10),
+                                                    padding: const EdgeInsets.only(left: 10,top: 10),
                                                     child: Row( children: [
                                                       Text(snapshot.data![index]
                                                       ['loans'],
-                                                          style: TextStyle(fontSize: 18,color: Colors.white
+                                                          style: const TextStyle(fontSize: 18,color: Colors.white
                                                           )),
                                                     ],
                                                     ),
@@ -160,7 +160,7 @@ class _StuState extends State<Stu> {
                                                   children: [
                                                     Text(
                                                       snapshot.data![index]['mobile'],
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                           fontSize: 20,
                                                           color: Colors.white),
                                                     ),
@@ -184,7 +184,7 @@ class _StuState extends State<Stu> {
                   },
                 );
               } else {
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
             },
             future: callApi()),
