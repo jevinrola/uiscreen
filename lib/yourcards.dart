@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uiscreen/details.dart';
 
 import 'balance.dart';
 
@@ -23,7 +24,7 @@ class _CardsStates extends State<Cards> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back_ios,
                 color: Colors.white,
               ),
@@ -57,7 +58,7 @@ class _CardsStates extends State<Cards> {
                     creditCard(),
                     Container(
                       color: Colors.black,
-                      padding: EdgeInsets.only(
+                      padding:const EdgeInsets.only(
                         left: 40,
                       ),
                       child: Row(
@@ -76,27 +77,25 @@ class _CardsStates extends State<Cards> {
                 ),
               ),
               Expanded(
-                child: Container(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        customTransaction(
-                            icon: "assets/images/Burger.png",
-                            title: "KFC",
-                            subtitle: "June 26",
-                            amount: "+\$2,010"),
-                        customTransaction(
-                            icon: "assets/images/paypal.png",
-                            title: "Paypal",
-                            subtitle: "June 28",
-                            amount: "+\$12,010"),
-                        customTransaction(
-                            icon: "assets/images/Burger.png",
-                            title: "Car Repair",
-                            subtitle: "Aug 12",
-                            amount: "+\$232,010"),
-                      ],
-                    ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      customTransaction(
+                          icon: "assets/images/Burger.png",
+                          title: "KFC",
+                          subtitle: "June 26",
+                          amount: "+\$2,010"),
+                      customTransaction(
+                          icon: "assets/images/paypal.png",
+                          title: "Paypal",
+                          subtitle: "June 28",
+                          amount: "+\$12,010"),
+                      customTransaction(
+                          icon: "assets/images/Burger.png",
+                          title: "Car Repair",
+                          subtitle: "Aug 12",
+                          amount: "+\$232,010"),
+                    ],
                   ),
                 ),
               ),
@@ -110,21 +109,22 @@ class _CardsStates extends State<Cards> {
               if (currentIndex == 0) {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return Balances();
+                    return const Balances();
                   }),
                 );
               } else if (currentIndex == 2) {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) {
-                      return Cards();
+                      return const Stu();
                     },
                   ),
                 );
-              } else
+              } else {
                 setState(() {
                   currentIndex = index;
                 });
+              }
             },
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
@@ -154,14 +154,14 @@ class _CardsStates extends State<Cards> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30),
             ),
-            margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
             color: Colors.grey.shade800,
             child: Row(
               children: [
                 Container(
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                  margin: EdgeInsets.all(15),
+                  margin: const EdgeInsets.all(15),
                   child: Image.asset(
                     icon,
                     scale: 2,
@@ -204,7 +204,7 @@ class _CardsStates extends State<Cards> {
 
   Widget creditCard() {
     return Expanded(child: Container(
-        margin: EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
@@ -220,7 +220,7 @@ class _CardsStates extends State<Cards> {
                     children: [
                       Expanded(
                         child: Container(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: const EdgeInsets.only(left: 20),
                           alignment: Alignment.centerLeft,
                           child: Image.asset(
                             "assets/images/chip.png",
@@ -236,7 +236,7 @@ class _CardsStates extends State<Cards> {
                     children: [
                       Expanded(
                         child: Container(
-                          padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
                           alignment: Alignment.centerLeft,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -272,7 +272,7 @@ class _CardsStates extends State<Cards> {
                     children: [
                       Expanded(
                         child: Container(
-                          padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
                           alignment: Alignment.centerLeft,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -302,7 +302,7 @@ class _CardsStates extends State<Cards> {
                       Expanded(
                         child: Container(
                           height: 70,
-                          padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
+                          padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
                           alignment: Alignment.centerRight,
                           child: Column(
                             children: const [

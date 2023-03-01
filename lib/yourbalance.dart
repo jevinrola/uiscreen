@@ -1,17 +1,37 @@
+// ignore_for_file: non_constant_identifier_names, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
-import 'package:uiscreen/yourcards.dart';
 
-import 'login.dart';
+import 'balance.dart';
 
-class Balance extends StatefulWidget {
-  Balance({Key? key}) : super(key: key);
+// ignore: must_be_immutable
+class Bankbalance extends StatefulWidget {
+  var balance_change;
+  // ignore: use_key_in_widget_constructors
+  Bankbalance(this.balance_change);
 
   @override
-  State<Balance> createState() => _BalanceState();
+  State<Bankbalance> createState() => _BankbalanceState();
 }
-
-class _BalanceState extends State<Balance> {
-  var currentIndex = 1;
+class _BankbalanceState extends State<Bankbalance>{
+  TextEditingController controller1 = TextEditingController();
+  TextEditingController controller2 = TextEditingController();
+  late int result=num1,num2=0,num1=widget.balance_change;
+  add(){
+    setState(() {
+      num1=result;
+      num2=int.parse(controller2.text);
+      result=num1 + num2;
+    });
+  }
+  sub(){
+    setState(() {
+      num1=result;
+      num2=int.parse(controller2.text);
+      result=num1 - num2;
+    });
+  }
+  @override
 
   @override
   Widget build(BuildContext context) {
@@ -19,330 +39,260 @@ class _BalanceState extends State<Balance> {
       home: SafeArea(
         child: Scaffold(
           appBar: AppBar(
+            backgroundColor: Colors.black,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+              ),
+            ),
             centerTitle: true,
-            title: const Text(
-              'Your Balance',
-            ),
-            backgroundColor: const Color(0xff764abc),
-          ),
-          drawer: Drawer(
-            child: ListView(
-              // Important: Remove any padding from the ListView.
-              padding: EdgeInsets.zero,
-              children: [
-                Container(
-                  color: Colors.blue,
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.person,
-                    ),
-                    title: const Text('Detail'),
-
-                  ),
-                ),
-                const DrawerHeader(
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                  ),
-                  child: Text('Your Balance'),
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.corporate_fare,
-                  ),
-                  title: const Text('Corporate App'),
-
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.security,
-                  ),
-                  title: const Text('Security'),
-
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.shopping_cart,
-                  ),
-                  title: const Text('Onlain Shopping'),
-
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.home,
-                  ),
-                  title: const Text('Home'),
-                  
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.login,
-                  ),
-                  title: const Text('Login'),
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return Login();
-                        },
-                      ),
-                    );
-                  },
-                ),
-              ],
-            ),
+            title: const Text('Bank Balance'),
           ),
           body: Container(
             color: Colors.black,
-            child: Column(children: [
-              // Padding(
-              //   padding: const EdgeInsets.only(
-              //       top: 40, left: 15, right: 15, bottom: 17),
-              //   child: Row(
-              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //       children: [
-              //         CircleAvatar(
-              //             child: Icon(Icons.menu, color: Colors.black),
-              //             backgroundColor: Colors.grey[200]),
-              //         CircleAvatar(
-              //             child: Icon(
-              //               Icons.person,
-              //               color: Colors.black,
-              //             ),
-              //             backgroundColor: Colors.grey[200]),
-              //       ]),
-              // ),
-              Padding(
-                padding: const EdgeInsets.only(left: 18, right: 15, bottom: 14),
-                child: Row(children: [
-                  Expanded(
-                    child: Container(
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                'Your Balance',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 25),
+            child: Expanded(
+
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  YourBalance(),
+
+                  // Container(
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.center,
+                  //     children: [
+                  //       Padding(
+                  //         padding: const EdgeInsets.only(bottom: 40,right: 20),
+                  //         child: Column(
+                  //             children: [
+                  //           Center(
+                  //             child: Row(
+                  //               mainAxisAlignment: MainAxisAlignment.center,
+                  //               children: [
+                  //                 Container(
+                  //                   height: 50,
+                  //                   width: 50,
+                  //                   decoration: BoxDecoration(
+                  //                       color: Colors.white24,
+                  //                       borderRadius: BorderRadius.circular(8)),
+                  //                   child:const Center(
+                  //                     child: Text('+',
+                  //                         style: TextStyle(
+                  //                             fontSize: 25,
+                  //                             fontWeight: FontWeight.bold,
+                  //                             color: Colors.white)),
+                  //                   ),
+                  //                 ),
+                  //               ],
+                  //             ),
+                  //           ),
+                  //         ]),
+                  //       ),
+                  //       Column(
+                  //         children: [
+                  //           Padding(
+                  //             padding: const EdgeInsets.only(bottom: 40,right: 20),
+                  //             child: Center(
+                  //               child: Row(
+                  //                 mainAxisAlignment: MainAxisAlignment.center,
+                  //                 children: [
+                  //                   Container(
+                  //                     height: 50,
+                  //                     width: 50,
+                  //                     decoration: BoxDecoration(
+                  //                         color: Colors.white24,
+                  //                         borderRadius: BorderRadius.circular(8)),
+                  //                     child:const Center(
+                  //                       child: Text('-',
+                  //                           style: TextStyle(
+                  //                               fontSize: 25,
+                  //                               fontWeight: FontWeight.bold,
+                  //                               color: Colors.white)),
+                  //                     ),
+                  //                   ),
+                  //                 ],
+                  //               ),
+                  //             ),
+                  //           ),
+                  //         ],
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                  Container(
+                    margin: const EdgeInsets.all(20),
+                    color: Colors.white24,
+                    child: Column(children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+                        child: Column(
+                          children: [
+                            Text("Ammount : $result",
+                              style: const TextStyle(fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                            ),
+
+                            const SizedBox(height: 20,),
+                            TextFormField(
+                              controller: controller2,
+                              decoration:
+                              InputDecoration(
+                                  labelText: "Ammount",
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(20)
+                                  )
+                              ),),
+                            const SizedBox(height: 20,),
+                            Container(
+                              margin: const EdgeInsets.only(top: 20),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  ElevatedButton(onPressed: () {
+                                    add();
+                                    // controller1.clear();
+                                    controller2.clear();
+                                  }, child: const Text('Sell')),
+                                  ElevatedButton(onPressed: () {
+                                    sub();
+                                    // controller1.clear();
+                                    controller2.clear();
+                                  }, child: const Text("Purchase"))
+                                ],
                               ),
-                            ],
-                          ),
-                        ],
+                            )
+                          ],
+                        ),
                       ),
-                    ),
+
+                    ]),
                   ),
-                ]),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 15, top: 5, right: 15),
-                  child: Row(children: [
-                    Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16.2),
-                      ),
-                      color: Colors.white24,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(120, 60, 120, 60),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 5),
-                                  child: Text(
-                                    '27,802.05',
-                                    style: TextStyle(
-                                        fontSize: 22,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
+
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => const Balances()),
+                          );
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+
+                            ElevatedButton(
+                              onPressed: () {
+                                return Navigator.pop(context,result);
+                              },
+                              child: Container(
+                                height: 55,
+                                width: 320,
+                                decoration: BoxDecoration(
+                                    color: Colors.blueAccent,
+                                    borderRadius: BorderRadius.circular(8)),
+                                child:const Center(
+                                  child: Text('Pay',
+                                      style: TextStyle(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white)),
                                 ),
                               ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ]),
-                ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(18, 5, 18, 5),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding:
-                        const EdgeInsets.only(left: 20, right: 20, top: 5),
-                        child: Column(
-                          children: [
-                            Container(
-                                height: 55,
-                                width: 55,
-                                child: Icon(
-                                  Icons.arrow_upward,
-                                  color: Colors.pink,
-                                ),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: Color(0xFFDCDCDC),
-                                )),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
-                              child: Container(
-                                  child: Text(
-                                    "Sent",
-                                    style: TextStyle(color: Colors.white),
-                                  )),
                             ),
                           ],
                         ),
                       ),
-                      Padding(
-                        padding:
-                        const EdgeInsets.only(left: 20, right: 20, top: 5),
-                        child: Column(
-                          children: [
-                            Container(
-                                height: 55,
-                                width: 55,
-                                child: Icon(
-                                  Icons.arrow_downward,
-                                  color: Colors.green,
-                                ),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: Color(0xFFDCDCDC),
-                                )),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
-                              child: Container(
-                                  child: Text(
-                                    "Receive",
-                                    style: TextStyle(color: Colors.white),
-                                  )),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                        const EdgeInsets.only(left: 20, right: 20, top: 5),
-                        child: Column(
-                          children: [
-                            Container(
-                                height: 55,
-                                width: 55,
-                                child: Icon(
-                                  Icons.currency_rupee,
-                                  color: Colors.orange,
-                                ),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: Color(0xFFDCDCDC),
-                                )),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
-                              child: Container(
-                                  child: Text(
-                                    "Loan",
-                                    style: TextStyle(color: Colors.white),
-                                  )),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                        const EdgeInsets.only(left: 20, right: 20, top: 5),
-                        child: Column(
-                          children: [
-                            Container(
-                                height: 55,
-                                width: 55,
-                                child: Icon(
-                                  Icons.cloud_upload_outlined,
-                                  color: Colors.blue,
-                                ),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: Color(0xFFDCDCDC),
-                                )),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
-                              child: Container(
-                                  child: Text(
-                                    "Topup",
-                                    style: TextStyle(color: Colors.white),
-                                  )),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Row(children: [
-                        Expanded(child: Image(image: AssetImage('assets/images/graph.jpg'))
-                        )
-                      ],)
                     ],
                   ),
-                ),
+                ],
               ),
-            ]),
-          ),
-          bottomNavigationBar: Container(
-            child: BottomNavigationBar(
-              onTap: (index) {
-                currentIndex = index;
-                if (currentIndex == 1) {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder:(context) {
-                     return Cards();
-                    }
-                    ),
-                    );
-                }
-                else if (currentIndex == 2) {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) {
-                      return Cards();
-                    },
-                    ),
-                  );
-                }
-                else
-                  setState(() {
-                    currentIndex = index;
-                  });
-              },
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.account_balance),
-                  label: 'Account',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.credit_card),
-                  label: 'Cards',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.currency_rupee),
-                  label: 'Loans',
-                ),
-              ],
             ),
           ),
         ),
       ),
     );
   }
+
+  Widget YourBalance() {
+    return Center(
+      child: Card(
+        margin: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.2),
+        ),
+        color: Colors.white24,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                height: 80,
+                margin: const EdgeInsets.only(
+                  top: 50,
+                  left: 20,
+                ),
+                child: Row(
+                  children: [
+                  Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:  [
+
+                    const Text(
+                      "June 14, 2020",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
+                    ),
+                    Text(
+                      "\$ $result",
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),                  ],
+                ),
+              ),
+            ),
+            Expanded(
+                child: Container(
+                  padding: const EdgeInsets.only(top: 55),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children:const [
+                            Text(
+                              "15%",
+                              style: TextStyle(color: Colors.white,
+                                fontSize: 20,
+                              ),
+
+                            ),
+                            Icon(
+                              Icons.arrow_upward,
+                              color: Colors.white,
+                            ),
+                          ]),
+                    ],
+                  ),
+                )),
+          ],
+        ),
+      ),
+    );
+  }
+
 }

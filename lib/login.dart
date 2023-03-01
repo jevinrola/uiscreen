@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:uiscreen/yourbalance.dart';
 
 import 'balance.dart';
 
@@ -16,8 +14,8 @@ class Login extends StatelessWidget {
           children: [
             Center(
               child: Container(
-                margin: EdgeInsets.only(top: 300),
-                child: Text(
+                margin: const EdgeInsets.only(top: 300),
+                child: const Text(
                   'Welcome',
                   style: TextStyle(
                       color: Colors.white,
@@ -27,8 +25,8 @@ class Login extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: 20),
-                child: Text(
+              margin: const EdgeInsets.only(bottom: 20),
+                child: const Text(
               'Finance and banking app please login to ypur \n'
               '      account for your check and balance',
               style: TextStyle(
@@ -43,7 +41,7 @@ class Login extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => Balances()
+                        builder: (context) => const Balances()
                       ),
                     );
                   },
@@ -55,7 +53,7 @@ class Login extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: Colors.deepPurple,
                             borderRadius: BorderRadius.circular(8)),
-                        child: Center(
+                        child: const Center(
                           child: Text('Login',
                               style: TextStyle(
                                   fontSize: 25,
@@ -69,9 +67,10 @@ class Login extends StatelessWidget {
               ],
             ),
 
+
             Container(
-              margin: EdgeInsets.only(top: 20),
-              child: Text(
+              margin: const EdgeInsets.only(top: 20),
+              child: const Text(
                 'Don not have an account ??'
                 'Singup',
                 style: TextStyle(color: Colors.white),
