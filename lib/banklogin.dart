@@ -14,8 +14,8 @@ class Bank extends StatelessWidget {
             children: [
               Expanded(
                   child: Container(
-                padding: EdgeInsets.only(top: 199),
-                child: Center(
+                padding: const EdgeInsets.only(top: 199),
+                child: const Center(
                   child: Text(
                     "Welcome",
                     style: TextStyle(
@@ -26,20 +26,18 @@ class Bank extends StatelessWidget {
                   ),
                 ),
               )),
-              Expanded(
-                  child: Container(
-                child: Center(
-                  child: Text(
-                    "Finance and banking app please login to your\n"
-                    "accountfor your check and balance.",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
+              const Expanded(
+                  child: Center(
+                    child: Text(
+                      "Finance and banking app please login to your\n"
+                      "accountfor your check and balance.",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              )),
+                  )),
               Expanded(
                 child: Column(
                   children: [
@@ -49,7 +47,7 @@ class Bank extends StatelessWidget {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) {
-                                return Login();
+                                return const Login();
                               },
                             ),
                           );
@@ -57,17 +55,15 @@ class Bank extends StatelessWidget {
                         child: const Text('Login'),
                       ),
                     ),
-                    Container(
-                      child: Center(
-                          child: Text(
-                        "Don't have an account? SINGUP",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                        ),
-                        textAlign: TextAlign.center,
-                      )),
-                    )
+                    const Center(
+                        child: Text(
+                      "Don't have an account? SINGUP",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
+                      textAlign: TextAlign.center,
+                    ))
                   ],
                 ),
               )
